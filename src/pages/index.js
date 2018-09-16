@@ -5,36 +5,33 @@ import Container from '../components/Container'
 import PageTitle from '../components/PageTitle'
 import SEO from '../components/SEO'
 
-const Index = ({ data }) => {
-  const posts = data.allContentfulPost.edges
+const Index = ({data}) => {
+    const posts = data.allContentfulPost.edges
 
-  return (
-    <div>
-      <SEO />
-      <Container>
-        <PageTitle small>
-          <p>
-            Engaging Projects that Inspire Innovation
-          </p>
-        </PageTitle>
-        <CardList>
-          {posts.map(({ node: post }) => (
-            <Card
-              key={post.id}
-              slug={post.slug}
-              image={post.heroImage}
-              title={post.title}
-              date={post.publishDate}
-              excerpt={post.body}
-            />
-          ))}
-        </CardList>
-      </Container>
-    </div>
-  )
+    return (
+        <div>
+            <SEO/>
+            <Container>
+                <PageTitle small>
+                    <p>
+                        Engaging Projects that Inspire Innovation.
+                    </p>
+                </PageTitle>
+                <CardList>
+                    {posts.map(({node: post}) => (<Card
+                        key={post.id}
+                        slug={post.slug}
+                        image={post.heroImage}
+                        title={post.title}
+                        date={post.publishDate}
+                        excerpt={post.body}/>))}
+                </CardList>
+            </Container>
+        </div>
+    )
 }
 
-export const query = graphql`
+export const query = graphql `
   query indexQuery {
     allContentfulPost(
       limit: 1000
