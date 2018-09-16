@@ -14,7 +14,7 @@ const Index = ({data}) => {
          <Container>
             <PageTitle small>
                <p>
-                  Technology, Art and Design Educational Resources to Fuel Your Creativity
+                  Technology, Art and Design Education to Fuel Your Creativity
                </p>
             </PageTitle>
             <CardList>
